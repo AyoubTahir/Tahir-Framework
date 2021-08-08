@@ -16,6 +16,7 @@ use Tahir\Core\Router\Router;
 use Tahir\Core\Database\DatabaseConnection;
 use Tahir\Core\Database\PDOManager;
 use Tahir\Core\Database\EntityManager;
+use Tahir\Core\Database\RepositoryManager;
 
 $routes = require_once( ROOT_PATH . '/routes/routes.php');
 
@@ -43,13 +44,17 @@ $rr->fetchAll(PDO::FETCH_OBJ);*/
 //$pdo->persist('SELECT id,lastname FROM users WHERE id = :id AND lastname = :lastname',['id' => 3, 'lastname'=> 'fdgfdgdgdgdfg']);
 //var_dump($pdo->resultSet());
 
-//$em = new EntityManager('users');
+//$em = new EntityManager('users','5');
 //var_dump($em->rawQuery('SELECT * FROM users')->rawFirst());
 //var_dump($em->select()->where('id','=',2)->andWhere('lastname','=','bbbbbbbbb')->get());
 //$em->insert(['lastname' => 'one tow'])->execute();
 //$em->update(['lastname' => 'tereafffffff'])->where('id','=',1)->execute();
 //$em->delete()->where('id','=',3)->execute();
 
+$rm = new RepositoryManager('users','5');
+var_dump($rm->Update([
+    'lastname' => 'zazazazaz'
+],9));
 ?>
 <form method="post" action="./users">
 <input type="text" name="nameKey">

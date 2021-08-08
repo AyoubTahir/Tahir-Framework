@@ -34,9 +34,8 @@ class EntityManager
         
     }
 
-    public function select(string $selectors = '*', array $parameters = []): self
+    public function select( string $selectors = '*' ): self
     {
-        $this->parameters = $parameters;
         $this->query = $this->queryManager->selectQuery($selectors);  
         
         return $this;
@@ -58,7 +57,6 @@ class EntityManager
     {
         $this->parameters[$key] = $value;
         $this->query .= $this->queryManager->hasConditions($key,$operator); 
-        var_dump($this->parameters);
         return $this;
 
     }
