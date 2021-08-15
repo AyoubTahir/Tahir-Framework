@@ -50,17 +50,9 @@ $rr->fetchAll(PDO::FETCH_OBJ);*/
 //$em->insert(['lastname' => 'one tow'])->execute();
 //$em->update(['lastname' => 'tereafffffff'])->where('id','=',1)->execute();
 //$em->delete()->where('id','=',3)->execute();
-
+/*
 $rm = new RepositoryManager('users','5');
 var_dump($rm->Update([
     'lastname' => 'zazazazaz'
-],9));
+],9));*/
 ?>
-<form method="post" action="./users">
-<input type="text" name="nameKey">
-<input type="text" name="namered">
-<input type="checkbox" name="der[]" value="red">
-<input type="checkbox" name="der[]" value="var">
-<input type="checkbox" name="der[]" value="mar">
-<button type="submit">goo</button>
-</form>

@@ -4,13 +4,10 @@ declare(strict_types=1);
 
 namespace Tahir\Core\Main;
 
-use Tahir\Core\Database\EntityManager;
+use Tahir\Core\Database\RepositoryManager;
 
-class Model extends EntityManager
+class Model extends RepositoryManager
 {
-
-    private string $table;
-    private string $ID;
 
     public function __construct(string $table, string $ID)
     {

@@ -1,3 +1,12 @@
 {% for user in users %}
     {{ user.lastname }}
 {% endfor %}
+
+<form method="post" action="./users">
+    <input type="text" name="nameKey">
+    <input type="text" name="namered">
+    <input type="checkbox" name="der[]" value="red">
+    <input type="checkbox" name="der[]" value="var">
+    <input type="checkbox" name="der[]" value="mar">
+    <button type="submit">goo</button>
+</form>

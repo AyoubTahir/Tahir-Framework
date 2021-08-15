@@ -9,23 +9,27 @@ use Tahir\Core\Main\Controller;
 
 class HomeController extends Controller
 {
+    protected $um;
+
     public function __construct()
     {
         parent::__construct();
-
+        $this->um = new UsersModel();
     }
 
-    public function index(){
+    public function index()
+    {
         echo 'tttttttttt';
-        $um = new UsersModel();
+        
         
         $this->render('client/home/index.html', [
-            'users' => $um->rawQuery('SELECT * FROM users')->rawGet()
+            'users' => $this->um->All()
         ]);
     }
 
-    public function show($id,$iid){
-        echo 'ffffff'.$id.$iid;
+    public function show($id,$iid)
+    {
+        var_dump($this->um->findOneById((int)$id));
         
     }
 
